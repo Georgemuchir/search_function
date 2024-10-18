@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.username }}'s Books{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">{{ user.username }}'s Books</h1>
+
+<ul class="list-group">
+    {% for book in user.books %}
+    <li class="list-group-item">{{ book.title }} by {{ book.author }}</li>
+    {% else %}
+    <li class="list-group-item">No books found for this user.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
